@@ -1,0 +1,6 @@
+server/.env
+client/.env
+.idea
+server/node_modules
+client/node_modules
+server/uploads/*
