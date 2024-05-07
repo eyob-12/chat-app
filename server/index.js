@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: process.env.CLIENT_URL,
+  origin: "https://scintillating-klepon-188c04.netlify.app/",
 }));
 
 async function getUserDataFromRequest(req) {
