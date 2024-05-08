@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const connectDb = require("./config/connectDB")
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
@@ -11,10 +12,10 @@ const ws = require('ws');
 const fs = require('fs');
 
 dotenv.config();
-mongoose.connect(process.env.MONGO_URL, (err) => {
-  if (err) throw err;
-  console.log("DATABASE CONNECTED ....");
-});
+
+// connect the database
+connectDb();
+
 const jwtSecret = process.env.JWT_SECRET;
 const bcryptSalt = bcrypt.genSaltSync(10);
 
